@@ -4,10 +4,10 @@ namespace Deployer;
 require 'recipe/zend_framework.php';
 
 // Project name
-set('application', 'jobs-frankfurt.com');
+set('application', 'gesundheitsstellenmarkt.de');
 
 // Project repository
-set('repository', 'git@gitlab.cross-solution.de:cbleek/Jobs-Frankfurt.com.git');
+set('repository', 'git@gitlab.cross-solution.de:yawik-modules/gesundheitsstellenmarkt.de.git');
 
 // Shared files/dirs between deploys 
 add('shared_files', [
@@ -31,7 +31,7 @@ set('default_stage', 'prod');
 
 // Hosts
 
-host('upcoming.jobs-frankfurt.com')
+host('51.89.37.115')
     ->user('yawik')
     ->stage('prod')
     ->multiplexing(false) 
