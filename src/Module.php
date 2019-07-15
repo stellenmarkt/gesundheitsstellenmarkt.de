@@ -124,13 +124,6 @@ class Module implements AssetProviderInterface
 
                 $matchedRouteName = $routeMatch->getMatchedRouteName();
 
-                if ('lang/jobboard' == $matchedRouteName || 'lang' == $matchedRouteName)  {
-                    $query = $event->getRequest()->getQuery();
-                    $query->set('l','{"postalCode":"60386","city":"Frankfurt am Main","street":"Fechenheimer Leinpfad","region":"Hesse","country":"Germany","osm_key":"club","osm_value":"sport","coordinates":{"type":"Point","coordinates":[8.7740561,50.1206359]}}');
-                    $query->set('d','20');
-
-                }
-
                 if ('lang/landingPage' == $matchedRouteName) {
                     $services = $event->getApplication()->getServiceManager();
                     $options = $services->get(Landingpages::class);
