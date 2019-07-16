@@ -1,0 +1,44 @@
+<?php
+/*
+ * This document has been generated with
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.15.1|configurator
+ * you can change this configuration by importing this file.
+ */
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@DoctrineAnnotation' => true,
+        '@Symfony:risky' => false,
+        '@Symfony' => false,
+        '@PHPUnit30Migration:risky' => false,
+        '@PHPUnit32Migration:risky' => false,
+        '@PHPUnit35Migration:risky' => false,
+        '@PHPUnit43Migration:risky' => false,
+        '@PHPUnit48Migration:risky' => false,
+        '@PHPUnit50Migration:risky' => false,
+        '@PHPUnit52Migration:risky' => false,
+        '@PHPUnit54Migration:risky' => false,
+        '@PHPUnit55Migration:risky' => false,
+        '@PHPUnit56Migration:risky' => false,
+        '@PHPUnit57Migration:risky' => false,
+        '@PHP56Migration' => false,
+        '@PHP56Migration:risky' => false,
+        '@PHP70Migration' => true,
+        '@PSR1' => true,
+        '@PSR2' => true,
+        '@PHP70Migration:risky' => false,
+        'align_multiline_comment' => true,
+        'array_indentation' => true,
+        'blank_line_before_statement' => false,
+        'concat_space' => ['spacing' => 'one'],
+        'increment_style' => false,
+        'method_chaining_indentation' => true,
+        'phpdoc_align' => false,
+        'phpdoc_annotation_without_dot' => false,
+        'phpdoc_summary' => false,
+        'yoda_style' => false,
+    ])
+    ->setFinder(PhpCsFixer\Finder::create()
+        ->exclude('vendor')
+        ->in(__DIR__ . '/src')
+    )
+;

@@ -1,7 +1,7 @@
 {
     "type": "yawik-module",
-    "name": "stellenmarkt/jobs-frankfurt-com",
-    "description": "Creates a nice Yawik skin used at https://www.jobs-frankfurt.com/",
+    "name": "stellenmarkt/gesundheitsstellenmarkt",
+    "description": "Creates a nice Yawik skin used at https://www.gesundheitsstellenmarkt.de/",
     "license": "MIT",
     "authors": [
         {
@@ -23,11 +23,14 @@
         "yawik/jobs": "^0.33",
         "yawik/orders": "^0.3",
         "yawik/jobs-by-mail": "^0.2",
-        "yawik/solr": "dev-master",
+        "yawik/solr": "^0.7",
         "yawik/simple-import": "^0.1",
         "yawik/organizations": "^0.33",
         "yawik/pdf": "^0.33",
         "yawik/composer-plugin": "^0.32@dev"
+    },    
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
         "psr-4": {
