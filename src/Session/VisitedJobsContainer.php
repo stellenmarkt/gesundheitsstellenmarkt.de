@@ -16,9 +16,9 @@ use Jobs\Entity\JobInterface;
  * Wraps a SessionContainer.
  *
  * Adds methods to set and check, if a certain job was already visited or not.
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class VisitedJobsContainer
 {
@@ -51,7 +51,9 @@ class VisitedJobsContainer
 
     private function getJobId($jobOrId)
     {
-        if (is_string($jobOrId)) { return $jobOrId; }
+        if (is_string($jobOrId)) {
+            return $jobOrId;
+        }
 
         if (! $jobOrId instanceof JobInterface) {
             return uniqid();

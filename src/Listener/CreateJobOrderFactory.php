@@ -13,12 +13,11 @@ namespace JobsFrankfurt\Listener;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class CreateJobOrderFactory implements FactoryInterface
 {

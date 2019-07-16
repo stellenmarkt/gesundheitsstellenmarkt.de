@@ -17,9 +17,9 @@ use Zend\View\Model\JsonModel;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class CreateSingleJob extends AbstractActionController
 {
@@ -112,7 +112,5 @@ class CreateSingleJob extends AbstractActionController
         $session->getManager()->getStorage()->clear('Gastro24_SingleJobData');
 
         return [ 'isSuccess' => true ];
-
     }
-
 }

@@ -20,9 +20,9 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
  * ${CARET}
  *
  * @ODM\Document(collection="gastro24.userproducts", repositoryClass="\Core\Repository\DefaultRepository")
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class UserProduct implements EntityInterface, IdentifiableEntityInterface
 {
@@ -54,7 +54,4 @@ class UserProduct implements EntityInterface, IdentifiableEntityInterface
 
         return $this;
     }
-
-
-
 }

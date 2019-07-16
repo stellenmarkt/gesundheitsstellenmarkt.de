@@ -15,15 +15,16 @@ use Zend\Filter\FilterInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class PdfFileUri implements FilterInterface
 {
     private $path;
 
-    public function __construct($path = null) {
+    public function __construct($path = null)
+    {
         $this->path = $path;
     }
 

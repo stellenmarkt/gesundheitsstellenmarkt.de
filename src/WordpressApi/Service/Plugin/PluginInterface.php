@@ -14,9 +14,9 @@ use JobsFrankfurt\WordpressApi\Service\WordpressClientInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 interface PluginInterface
 {

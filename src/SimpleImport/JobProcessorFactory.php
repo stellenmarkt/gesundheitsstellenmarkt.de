@@ -8,7 +8,6 @@
  */
 namespace JobsFrankfurt\SimpleImport;
 
-
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use SimpleImport\DataFetch;
@@ -36,6 +35,11 @@ class JobProcessorFactory implements FactoryInterface
         $dataInputFilter = new JobDataInputFilter($moduleOptions->getClassifications());
         
         return new \SimpleImport\CrawlerProcessor\JobProcessor(
-            $jsonFetch, $plainTextFetch, $jobRepository, $jobHydrator, $dataInputFilter);
+            $jsonFetch,
+            $plainTextFetch,
+            $jobRepository,
+            $jobHydrator,
+            $dataInputFilter
+        );
     }
 }

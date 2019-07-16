@@ -14,9 +14,9 @@ use Settings\Form\SettingsFieldset;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class InvoiceAddressSettingsFieldset extends SettingsFieldset
 {
@@ -65,9 +65,5 @@ class InvoiceAddressSettingsFieldset extends SettingsFieldset
             'name' => 'vatId',
             'type' => 'hidden',
         ]);
-
-
     }
-
-    
 }

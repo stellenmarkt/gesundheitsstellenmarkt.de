@@ -15,18 +15,17 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\View\Helper\LogoUri
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class LogoUriFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $imageCache = $container->get( 'Organizations\ImageFileCache\Manager' );
+        $imageCache = $container->get('Organizations\ImageFileCache\Manager');
         $service = new LogoUri($imageCache);
         
-        return $service;    
+        return $service;
     }
 }

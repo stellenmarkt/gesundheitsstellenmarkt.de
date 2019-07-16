@@ -10,16 +10,15 @@
 /** */
 namespace JobsFrankfurt\Listener;
 
-
 use Jobs\Entity\JobSnapshotStatus;
 use Jobs\Entity\Status;
 use Jobs\Listener\Events\JobEvent;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class AutoApproveChangedJobs
 {
@@ -54,5 +53,4 @@ class AutoApproveChangedJobs
         $this->response->getHeaders()->addHeaderLine('Location', '/de/job');
         $this->response->setStatusCode(302);
     }
-
 }

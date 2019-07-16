@@ -15,22 +15,20 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\Filter\PdfFileUri
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class PdfFileUriFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-
         $helpers = $container->get('ViewHelperManager');
         $serverUrl = $helpers->get('serverUrl');
         $basepath = $helpers->get('basepath');
         $path = $serverUrl($basepath()) . '/';
         $service = new PdfFileUri($path);
 
-        return $service;    
+        return $service;
     }
 }

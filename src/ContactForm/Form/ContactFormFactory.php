@@ -15,13 +15,12 @@ use JobsFrankfurt\ContactForm\Options\ContactFormFormOptions;
 
 /**
  * Factory for \Gastro24\ContactForm\Form\ContactForm
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class ContactFormFactory extends AbstractCustomizableFieldsetFactory
 {
     const CLASS_NAME = ContactForm::class;
     const OPTIONS_NAME = ContactFormFormOptions::class;
-
 }

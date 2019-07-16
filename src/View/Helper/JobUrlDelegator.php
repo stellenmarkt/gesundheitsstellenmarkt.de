@@ -16,13 +16,12 @@ use Zend\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobUrlDelegator extends AbstractHelper
 {
-
     private $jobUrlHelper;
     private $urlHelper;
     private $serverUrlHelper;
@@ -45,15 +44,17 @@ class JobUrlDelegator extends AbstractHelper
             /* Unfortunately, we need to copy this portion from the jobUrlHelper
              * but simplified, as some options are implied */
 
-            if (isset($options['linkOnly']) && $options['linkOnly']){
+            if (isset($options['linkOnly']) && $options['linkOnly']) {
                 if (isset($options['absolute']) && $options['absolute']) {
                     $url = $this->serverUrlHelper->__invoke($url);
                 }
                 $result = $url;
-            }else{
-                $result = sprintf('<a href="%s">%s</a>',
+            } else {
+                $result = sprintf(
+                    '<a href="%s">%s</a>',
                     $url,
-                    strip_tags($jobEntity->getTitle()));
+                    strip_tags($jobEntity->getTitle())
+                );
             }
             return $result;
         }

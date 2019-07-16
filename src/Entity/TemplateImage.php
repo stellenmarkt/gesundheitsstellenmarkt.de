@@ -10,7 +10,6 @@
 /** */
 namespace JobsFrankfurt\Entity;
 
-
 use Core\Entity\FileEntity;
 use Core\Entity\Permissions;
 use \Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
@@ -27,7 +26,7 @@ class TemplateImage extends FileEntity
 {
     public function getUri()
     {
-        return 'file/Gastro24.TemplateImage/' . $this->id . '/' .urlencode($this->name);
+        return 'file/Gastro24.TemplateImage/' . $this->id . '/' . urlencode($this->name);
     }
 
     public function getPermissions()

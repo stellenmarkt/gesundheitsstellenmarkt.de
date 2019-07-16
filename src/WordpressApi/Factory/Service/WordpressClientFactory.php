@@ -19,9 +19,9 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressClientFactory implements FactoryInterface
 {
@@ -29,7 +29,7 @@ class WordpressClientFactory implements FactoryInterface
     {
         $options       = $container->get('JobsFrankfurt/WordpressApiOptions');
         $pluginsConfig = $container->get('Config');
-        $pluginsConfig = isset($pluginsConfig['wordpressclient_plugins']) ? $pluginsConfig['wordpressclient_plugins'] : [];
+        $pluginsConfig = $pluginsConfig['wordpressclient_plugins'] ?? [];
         $plugins       = new WordpressClientPluginManager($container, $pluginsConfig);
         $client        = new WordpressClient($options->getBaseUrl(), $plugins);
 
@@ -37,14 +37,14 @@ class WordpressClientFactory implements FactoryInterface
 
         if ($container->has('JobsFrankfurt/WordpressApiClient')) {
             $client->setHttpClient($container->get('JobsFrankfurt/WordpressApiClient'));
-        } else if ($clientOptions = $options->getHttpClientOptions()) {
+        } elseif ($clientOptions = $options->getHttpClientOptions()) {
             $httpClient = $this->setupHttpClient($clientOptions);
             $client->setHttpClient($httpClient);
         }
 
         if ($container->has('JobsFrankfurt/WordpressApiCache')) {
             $client->setCache($container->get('JobsFrankfurt/WordpressApiCache'));
-        } else if ($cacheOptions = $options->getCacheOptions()) {
+        } elseif ($cacheOptions = $options->getCacheOptions()) {
             $cache = StorageFactory::factory($cacheOptions);
             $client->setCache($cache);
         }

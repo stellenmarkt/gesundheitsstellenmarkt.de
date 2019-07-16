@@ -18,7 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Hydrator strategy for TreeSelect form element.
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
  * @since 0.29
  */

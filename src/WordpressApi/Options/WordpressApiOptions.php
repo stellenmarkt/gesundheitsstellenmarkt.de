@@ -14,9 +14,9 @@ use Zend\Stdlib\AbstractOptions;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressApiOptions extends AbstractOptions
 {
@@ -125,6 +125,4 @@ class WordpressApiOptions extends AbstractOptions
     {
         return $this->idMap;
     }
-
-    
 }

@@ -16,13 +16,12 @@ use JobsFrankfurt\Entity\TemplateImage;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class DeleteTemplateImage 
+class DeleteTemplateImage
 {
-
     private $repository;
 
     public function __construct(DocumentRepository $repository)
@@ -34,7 +33,7 @@ class DeleteTemplateImage
     {
         $file = $event->getFile();
 
-        if (! $file instanceOf TemplateImage) {
+        if (! $file instanceof TemplateImage) {
             return;
         }
 

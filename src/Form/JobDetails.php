@@ -19,9 +19,9 @@ use Zend\InputFilter\InputFilterProviderInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobDetails extends Fieldset implements InputFilterProviderInterface, ViewPartialProviderInterface
 {
@@ -54,7 +54,6 @@ class JobDetails extends Fieldset implements InputFilterProviderInterface, ViewP
 
     public function init()
     {
-
         $this->add([
             'type' => 'radio',
             'name' => 'mode',
@@ -163,9 +162,6 @@ class JobDetails extends Fieldset implements InputFilterProviderInterface, ViewP
                 'style' => 'height: auto;',
             ],
         ]);
-
-
-
     }
 
     public function getInputFilterSpecification()
@@ -207,7 +203,7 @@ class JobDetails extends Fieldset implements InputFilterProviderInterface, ViewP
                     ],
                 ],
             ];
-        } else if ('uri' == $mode) {
+        } elseif ('uri' == $mode) {
             $spec['uri'] = [ 'require' => true ];
         } else {
             $spec += [

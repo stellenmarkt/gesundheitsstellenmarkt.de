@@ -16,13 +16,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\ContactForm\Controller\Plugin\ContactMailSender
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class ContactMailSenderFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $mailer = $container->get('Core/MailService');

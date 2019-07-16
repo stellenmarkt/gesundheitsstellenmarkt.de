@@ -14,11 +14,11 @@ use Zend\Http\Request;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-interface WordpressClientInterface 
+interface WordpressClientInterface
 {
     public function request($path, array $args = [], $method = Request::METHOD_GET);
 }

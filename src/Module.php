@@ -37,7 +37,6 @@ class Module implements AssetProviderInterface
      */
     public function getAutoloaderConfig()
     {
-
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
@@ -57,7 +56,7 @@ class Module implements AssetProviderInterface
         return ModuleConfigLoader::load(__DIR__ . '/../config');
     }
 
-    function onBootstrap(MvcEvent $e)
+    public function onBootstrap(MvcEvent $e)
     {
         self::$isLoaded=true;
         $eventManager = $e->getApplication()->getEventManager();
@@ -83,44 +82,48 @@ class Module implements AssetProviderInterface
              * the application entity to determine how to set the layout in the preview page.
              */
             $listener = function ($event) {
-	            $viewModel  = $event->getViewModel();
-	            $template   = 'layout/application-form';
-	            $controller = $event->getTarget();
+                $viewModel  = $event->getViewModel();
+                $template   = 'layout/application-form';
+                $controller = $event->getTarget();
 
-	            if ($controller instanceof \Applications\Controller\ApplyController) {
-		            $viewModel->setTemplate($template);
-		            return;
-	            }
+                if ($controller instanceof \Applications\Controller\ApplyController) {
+                    $viewModel->setTemplate($template);
+                    return;
+                }
 
-	            if ($controller instanceof \Applications\Controller\ManageController
-	                && 'detail' == $event->getRouteMatch()->getParam('action')
-	                && 200 == $event->getResponse()->getStatusCode()
-	            ) {
-		            $result = $event->getResult();
-		            if (!is_array($result)) {
-			            $result = $result->getVariables();
-		            }
-		            if ($result['application']->isDraft()) {
-			            $viewModel->setTemplate($template);
-		            }
-	            }
-
+                if ($controller instanceof \Applications\Controller\ManageController
+                    && 'detail' == $event->getRouteMatch()->getParam('action')
+                    && 200 == $event->getResponse()->getStatusCode()
+                ) {
+                    $result = $event->getResult();
+                    if (!is_array($result)) {
+                        $result = $result->getVariables();
+                    }
+                    if ($result['application']->isDraft()) {
+                        $viewModel->setTemplate($template);
+                    }
+                }
             };
 
             $sharedManager->attach(
                 'Applications',
-                MvcEvent::EVENT_DISPATCH,$listener,
+                MvcEvent::EVENT_DISPATCH,
+                $listener,
                 -2 /*postDispatch, but before most of the other zf2 listener*/
             );
             $sharedManager->attach(
-            	'CamMediaintown',
-	            MvcEvent::EVENT_DISPATCH,$listener,
-	            -2);
+                'CamMediaintown',
+                MvcEvent::EVENT_DISPATCH,
+                $listener,
+                -2
+            );
 
-            $eventManager->attach(MvcEvent::EVENT_ROUTE, function(MvcEvent $event) {
+            $eventManager->attach(MvcEvent::EVENT_ROUTE, function (MvcEvent $event) {
                 $routeMatch = $event->getRouteMatch();
 
-                if (!$routeMatch) { return; }
+                if (!$routeMatch) {
+                    return;
+                }
 
                 $matchedRouteName = $routeMatch->getMatchedRouteName();
 
@@ -128,12 +131,12 @@ class Module implements AssetProviderInterface
                     $query = $event->getRequest()->getQuery();
                     $query->set('id', $routeMatch->getParam('id') ?: $event->getRequest()->getQuery('id'));
                 }
-
             }, -9999);
 
-            $eventManager->attach(MvcEvent::EVENT_DISPATCH, function(MvcEvent $e) {
+            $eventManager->attach(MvcEvent::EVENT_DISPATCH, function (MvcEvent $e) {
                 $controller = $e->getTarget();
-                if ( (\Auth\Controller\RegisterController::class == get_class($controller)
+                if ((
+                    \Auth\Controller\RegisterController::class == get_class($controller)
                       || \CompanyRegistration\Controller\RegistrationController::class == get_class($controller)
                      )
                     && (($pt = $e->getRequest()->getQuery('pt')) || ($pt = $e->getRequest()->getPost('pt')))
@@ -148,7 +151,7 @@ class Module implements AssetProviderInterface
                 }
             }, -10);
 
-            $eventManager->attach(MvcEvent::EVENT_RENDER, function(MvcEvent $e) {
+            $eventManager->attach(MvcEvent::EVENT_RENDER, function (MvcEvent $e) {
                 $services     = $e->getApplication()->getServiceManager();
                 $navigation   = $services->get('Core/Navigation');
 
@@ -165,6 +168,5 @@ class Module implements AssetProviderInterface
                 $navigation->addPage($page);
             }, 5);
         }
-
     }
 }

@@ -15,11 +15,11 @@ use JobsFrankfurt\Entity\UserProduct;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class ValidateUserProduct 
+class ValidateUserProduct
 {
     public function __invoke(FormEvent $event)
     {

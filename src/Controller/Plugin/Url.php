@@ -14,9 +14,9 @@ use Zend\Mvc\Controller\Plugin\Url as ZfUrl;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class Url extends ZfUrl
 {
@@ -29,5 +29,4 @@ class Url extends ZfUrl
 
         return parent::fromRoute($route, $params, $options, $reuseMatchedParams);
     }
-
 }

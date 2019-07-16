@@ -15,9 +15,9 @@ use Zend\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobboardApplyUrl extends AbstractHelper
 {
@@ -37,13 +37,12 @@ class JobboardApplyUrl extends AbstractHelper
             $url = $job->getLink();
             $pdflink = null;
             $class = "no-apply-link";
-            if (strpos($url,"http")) {
+            if (strpos($url, "http")) {
                 $text = '.pdf' == substr($url, -4) ? 'PDF downloaden' : 'Jetzt bewerben';
             } else {
                 $url = null;
             }
-        } else if ($ats->isIntern() || $ats->isEmail()) {
-
+        } elseif ($ats->isIntern() || $ats->isEmail()) {
             $route = 'lang/apply';
             $params = [
                 'applyId' => $job->getApplyId(),
@@ -54,7 +53,6 @@ class JobboardApplyUrl extends AbstractHelper
             $class = 'internal-apply-link';
             $text = 'Jetzt bewerben';
             $pdflink = '.pdf' == substr($job->getLink(), -4) ?$job->getLink() : null;
-
         } else {
             $url = $ats->getUri();
             $class = 'external-apply-link';

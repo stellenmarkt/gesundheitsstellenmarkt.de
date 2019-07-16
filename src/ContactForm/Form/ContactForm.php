@@ -17,9 +17,9 @@ use Zend\InputFilter\InputFilterProviderInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class ContactForm extends Form implements InputFilterProviderInterface, CustomizableFieldsetInterface
 {
@@ -153,6 +153,4 @@ class ContactForm extends Form implements InputFilterProviderInterface, Customiz
             ],
         ];
     }
-
-
 }

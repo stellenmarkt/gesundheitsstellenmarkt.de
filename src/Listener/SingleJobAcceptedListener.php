@@ -14,14 +14,12 @@ use Jobs\Listener\Events\JobEvent;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class SingleJobAcceptedListener 
+class SingleJobAcceptedListener
 {
-
-
     private $orders;
     private $mailer;
 
@@ -31,16 +29,20 @@ class SingleJobAcceptedListener
         $this->mailer = $mailer;
     }
 
-    public  function __invoke(JobEvent $event)
+    public function __invoke(JobEvent $event)
     {
         $job = $event->getJobEntity();
 
-        if ($job->getUser()) { return; }
+        if ($job->getUser()) {
+            return;
+        }
 
         /* @var \Orders\Entity\Order $order */
         $order = $this->orders->findByJobId($job->getId());
 
-        if (!$order) { return; }
+        if (!$order) {
+            return;
+        }
 
         $invoice = $order->getInvoiceAddress();
 

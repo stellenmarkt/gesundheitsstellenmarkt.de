@@ -22,7 +22,7 @@ use \Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
  * @ODM\Document(collection="gastro24.templates")
  *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class Template implements EntityInterface, IdentifiableEntityInterface
 {
@@ -87,9 +87,8 @@ class Template implements EntityInterface, IdentifiableEntityInterface
         return $this;
     }
 
-    public function clearImage() {
+    public function clearImage()
+    {
         $this->image = null;
     }
-
-
 }

@@ -15,9 +15,9 @@ use Jobs\Entity\JobSnapshot;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobHydrator extends EntityHydrator
 {
@@ -56,6 +56,4 @@ class JobHydrator extends EntityHydrator
 
         return parent::hydrate($data, $object);
     }
-
-
 }

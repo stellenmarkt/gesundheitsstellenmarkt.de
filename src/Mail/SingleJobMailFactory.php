@@ -15,13 +15,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory creates a HTML Template Mail for sending single job pending notice to customer
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class SingleJobMailFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $service = $container->get('Core/MailService');

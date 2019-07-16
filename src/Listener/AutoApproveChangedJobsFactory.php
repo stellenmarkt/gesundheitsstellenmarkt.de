@@ -15,13 +15,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\Repository\Events\AutoApproveChangedJobs
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class AutoApproveChangedJobsFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $repositories = $container->get('repositories');
@@ -31,6 +30,6 @@ class AutoApproveChangedJobsFactory implements FactoryInterface
         $response     = $app->getResponse();
         $service      = new AutoApproveChangedJobs($jobs, $snaphots, $response);
         
-        return $service;    
+        return $service;
     }
 }

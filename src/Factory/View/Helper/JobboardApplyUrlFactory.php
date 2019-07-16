@@ -16,13 +16,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\View\Helper\JobboardApplyUrl
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class JobboardApplyUrlFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $urlHelper = $container->get('ViewHelperManager')->get('url');

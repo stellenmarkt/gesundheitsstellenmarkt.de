@@ -14,12 +14,11 @@ use Jobs\Form\JobDescription as ParentJobDescription;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Carsten Bleek <bleek@cross-solution.de>
  */
 class JobsDescription extends ParentJobDescription
 {
-
     public function init()
     {
         parent::init();

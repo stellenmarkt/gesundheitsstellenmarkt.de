@@ -16,9 +16,9 @@ use Zend\Hydrator\HydratorInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobDetailsHydrator implements HydratorInterface
 {
@@ -34,7 +34,7 @@ class JobDetailsHydrator implements HydratorInterface
         $link = $object->getLink();
         if ('.pdf' == substr($link, -4)) {
             $mode = 'pdf';
-        } else if ($link) {
+        } elseif ($link) {
             $mode = 'uri';
         } else {
             $mode = 'html';
@@ -81,12 +81,10 @@ class JobDetailsHydrator implements HydratorInterface
                 $file = $repository->find($_POST['details']['image_id']);
                 $template->setImage($file);
             }
-
         } else {
-            $object->setLink('uri' == $data['mode'] ? $data['uri'] : (isset($_POST['pdf_uri']) ? $_POST['pdf_uri'] : $data['pdf']));
+            $object->setLink('uri' == $data['mode'] ? $data['uri'] : ($_POST['pdf_uri'] ?? $data['pdf']));
         }
 
         return $object;
     }
-
 }

@@ -17,13 +17,12 @@ use Zend\Stdlib\ArrayUtils;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class JobDetailFileUpload 
+class JobDetailFileUpload
 {
-
     private $form;
 
     private $repository;
@@ -36,7 +35,7 @@ class JobDetailFileUpload
 
     public function __invoke(AjaxEvent $event)
     {
-        $mode    = isset($_POST['details']['mode']) ? $_POST['details']['mode'] : null;
+        $mode    = $_POST['details']['mode'] ?? null;
 
         if (!$mode) {
             return;
@@ -62,7 +61,7 @@ class JobDetailFileUpload
             $values = $this->form->getData();
             return ['valid' => true, 'content' => '
                 <a href="' . $values['details']['pdf']['uri'] . '" target="_blank">' . basename($values['details']['pdf']['uri']) . '</a>
-                <a href="?ajax=jobdetailsdelete&file=' .basename($values['details']['pdf']['uri']). '" class="file-delete btn btn-default btn-xs">
+                <a href="?ajax=jobdetailsdelete&file=' . basename($values['details']['pdf']['uri']) . '" class="file-delete btn btn-default btn-xs">
         <span class="yk-icon yk-icon-minus"></span>
     </a>
     <input type="hidden" value="' . $values['details']['pdf']['uri'] . '" name="pdf_uri">'

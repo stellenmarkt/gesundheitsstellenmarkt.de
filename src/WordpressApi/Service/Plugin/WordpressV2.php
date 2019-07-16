@@ -12,9 +12,9 @@ namespace JobsFrankfurt\WordpressApi\Service\Plugin;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressV2 extends AbstractPlugin
 {

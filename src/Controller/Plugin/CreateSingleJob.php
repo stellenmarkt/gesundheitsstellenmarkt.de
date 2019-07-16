@@ -24,13 +24,12 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class CreateSingleJob extends AbstractPlugin
 {
-
     private $jobRepository;
     private $orderRepository;
     private $templateImageRepository;
@@ -81,7 +80,6 @@ class CreateSingleJob extends AbstractPlugin
                 $template->setLogo($logo);
             }
             $job->addAttachedEntity($template, 'gastro24-template');
-
         }
         $job->setLink($values['details']['uri']);
         $job->setTitle($values['title']);
@@ -106,7 +104,6 @@ class CreateSingleJob extends AbstractPlugin
 
     private function sendMails($job, $order, $values)
     {
-
         $this->mailer->send($this->mailer->get(
             'JobsFrankfurt/SingleJobMail',
             [
@@ -133,7 +130,6 @@ class CreateSingleJob extends AbstractPlugin
                 ],
             ]
         ));
-
     }
 
     private function createOrder(\Jobs\Entity\Job $job, $values)
@@ -150,8 +146,8 @@ class CreateSingleJob extends AbstractPlugin
 
         $product = new Product();
         $product->setName('Einzelinserat')
-                ->setProductNumber(1)
-                ->setQuantity(1);
+            ->setProductNumber(1)
+            ->setQuantity(1);
 
         $products->add($product);
 

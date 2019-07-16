@@ -19,7 +19,7 @@ use Zend\View\Helper\AbstractHelper;
  * ${CARET}
  *
  * <pre>
-
+ *
  * $this->wordpress('page', 'pageId')->value();
  * $this->wordpress()->string('page', 'bonifatius', 'title.rendered');
  * $this->wordpress('page', 'pageId')->template('viewScript');
@@ -32,9 +32,9 @@ use Zend\View\Helper\AbstractHelper;
  * $this->proxy()->chain('wordpress', ['page', 'pageId'], ['template', 'script']);
  * $this->proxy()->consecutive('wordpress', ['page', 'pageId'], ['value']);
  *
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressContent extends AbstractHelper
 {
@@ -103,7 +103,7 @@ class WordpressContent extends AbstractHelper
 
         if (false === $render) {
             return $this;
-        } else if (isset($this->result->error) || !count($this->result->items)) {
+        } elseif (isset($this->result->error) || !count($this->result->items)) {
             return '';
         }
 
@@ -129,9 +129,9 @@ class WordpressContent extends AbstractHelper
 
         if (1 < func_num_args()) {
             $keys = func_get_args();
-        } else if (false !== strpos($key, '.')) {
+        } elseif (false !== strpos($key, '.')) {
             $keys = explode('.', $key);
-        } else if (!is_array($key)) {
+        } elseif (!is_array($key)) {
             $keys = [$key];
         } else {
             $keys = $key;

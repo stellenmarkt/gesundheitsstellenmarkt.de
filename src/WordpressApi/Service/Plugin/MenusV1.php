@@ -12,13 +12,12 @@ namespace JobsFrankfurt\WordpressApi\Service\Plugin;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class MenusV1 extends AbstractPlugin
 {
-
     protected $basePath = 'menus/v1';
 
     protected $invokableMethods = [

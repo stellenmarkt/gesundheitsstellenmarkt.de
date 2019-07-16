@@ -18,9 +18,9 @@ use Zend\Json\Json;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressClient implements WordpressClientInterface
 {
@@ -126,11 +126,13 @@ class WordpressClient implements WordpressClientInterface
         return $this->httpClient;
     }
 
-     public function request($path, array $args = [], $method = Request::METHOD_GET)
+    public function request($path, array $args = [], $method = Request::METHOD_GET)
     {
         $cache    = $this->getCache();
         $cacheKey = $path;
-        if ($args) { $cacheKey .= md5(serialize($args)); }
+        if ($args) {
+            $cacheKey .= md5(serialize($args));
+        }
         $hit    = false;
         $result = $cache->getItem($cacheKey, $hit);
 

@@ -17,9 +17,9 @@ use Zend\View\Model\ViewModel;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class ContactFormController extends AbstractActionController
 {
@@ -60,7 +60,9 @@ class ContactFormController extends AbstractActionController
 
         $this->contactForm->setData($request->getPost());
 
-        if (!$this->contactForm->isValid()) { return false; }
+        if (!$this->contactForm->isValid()) {
+            return false;
+        }
 
         $data   = $this->contactForm->getInputFilter()->getValues();
         $plugin = $this->plugin(ContactMailSender::class);
@@ -74,7 +76,9 @@ class ContactFormController extends AbstractActionController
     {
         $auth = $this->plugin('auth');
 
-        if (!$auth->isLoggedIn()) { return; }
+        if (!$auth->isLoggedIn()) {
+            return;
+        }
 
         /* @var \Auth\Entity\User $user */
         $user = $auth->getUser();

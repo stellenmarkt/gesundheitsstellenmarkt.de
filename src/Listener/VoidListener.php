@@ -14,13 +14,12 @@ use Core\Form\Event\FormEvent;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class VoidListener
 {
-
     public function __invoke(FormEvent $event)
     {
         return;

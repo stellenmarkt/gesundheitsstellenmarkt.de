@@ -15,11 +15,11 @@ use JobsFrankfurt\Form\UserProductInfo;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class InjectUserProductInfo 
+class InjectUserProductInfo
 {
     public function __invoke(FormEvent $event)
     {
@@ -35,6 +35,5 @@ class InjectUserProductInfo
         $spec['options']['forms']['userProduct'] = $info;
 
         $container->setForm('general', $spec);
-
     }
 }

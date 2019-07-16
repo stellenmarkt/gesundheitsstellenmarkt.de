@@ -14,13 +14,12 @@ use Core\Options\FieldsetCustomizationOptions;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class ContactFormFormOptions extends FieldsetCustomizationOptions
 {
-
     protected $fields = [
         'organization' => [
             'required' => true,
@@ -61,5 +60,4 @@ class ContactFormFormOptions extends FieldsetCustomizationOptions
             ],
         ],
     ];
-    
 }

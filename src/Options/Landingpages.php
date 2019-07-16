@@ -14,13 +14,12 @@ use Zend\Stdlib\AbstractOptions;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class Landingpages extends AbstractOptions
 {
-
     private $idMap = [];
 
     private $queryMap = [];
@@ -44,25 +43,22 @@ class Landingpages extends AbstractOptions
             if (isset($spec['company'])) {
                 if (!isset($spec['query'])) {
                     $spec['query'] = [ 'organizationTag' => [$spec['company'] => 1]];
-                } else if (!isset($spec['query']['organizationTag'])) {
+                } elseif (!isset($spec['query']['organizationTag'])) {
                     $spec['query']['organizationTag'] = [$spec['company'] => 1];
                 }
                 
-                $companies[$term] = [isset($spec['text'])?$spec['text'] : $term, isset($spec['logo']) ? $spec['logo'] : false];
+                $companies[$term] = [$spec['text'] ?? $term, $spec['logo'] ?? false];
             }
 
             if (isset($spec['query']) && !isset($spec['query']['q'])) {
                 $spec['query']['q'] = '';
             }
 
-            $queryMap[ $term ] = isset($spec[ 'query' ]) ? $spec[ 'query' ] : ['q' => $term];
+            $queryMap[ $term ] = $spec[ 'query' ] ?? ['q' => $term];
 
             if (isset($spec['tab']) && isset($spec['panel'])) {
                 $tabs[ $spec[ 'tab' ] ][ $spec[ 'panel' ] ][] = [$term, $spec[ 'text' ]];
             }
-            
-            
-
         }
 
         return parent::setFromArray(['idMap' => $idMap, 'queryMap' => $queryMap, 'tabs' => $tabs, 'companies' => $companies ]);
@@ -158,7 +154,4 @@ class Landingpages extends AbstractOptions
 
         return $this;
     }
-
-
-
 }

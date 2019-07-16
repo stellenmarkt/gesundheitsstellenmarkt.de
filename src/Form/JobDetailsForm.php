@@ -73,6 +73,4 @@ class JobDetailsForm extends SummaryForm implements HeadscriptProviderInterface
 
         return $isValid;
     }
-
-
 }

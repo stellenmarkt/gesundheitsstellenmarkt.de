@@ -15,9 +15,9 @@ use Zend\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class LandingpagesList extends AbstractHelper
 {
@@ -83,7 +83,7 @@ class LandingpagesList extends AbstractHelper
 
         $out = '<ul>';
         foreach ($result as $page) {
-            $out .= '<li><a href="' . $url('lang/landingPage', ['q' => $map[$page->id], 'format' => 'html'], true) .'">'
+            $out .= '<li><a href="' . $url('lang/landingPage', ['q' => $map[$page->id], 'format' => 'html'], true) . '">'
                   . $page->title->rendered . '</a></li>';
         }
         $out .= '</ul>';

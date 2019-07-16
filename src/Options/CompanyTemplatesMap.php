@@ -15,9 +15,9 @@ use Zend\Stdlib\AbstractOptions;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class CompanyTemplatesMap extends AbstractOptions
 {
@@ -30,7 +30,7 @@ class CompanyTemplatesMap extends AbstractOptions
 
     public function getTemplate($organization)
     {
-        if ($organization instanceOf Organization) {
+        if ($organization instanceof Organization) {
             $organization = $organization->getId();
         }
 

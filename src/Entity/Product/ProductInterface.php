@@ -12,11 +12,11 @@ namespace JobsFrankfurt\Entity\Product;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-interface ProductInterface 
+interface ProductInterface
 {
     /**
      *
@@ -73,6 +73,4 @@ interface ProductInterface
      * @return void
      */
     public function increaseJobCount();
-
-
 }

@@ -16,11 +16,11 @@ use Zend\EventManager\EventInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class WordpressContentSnippet 
+class WordpressContentSnippet
 {
     /**
      *

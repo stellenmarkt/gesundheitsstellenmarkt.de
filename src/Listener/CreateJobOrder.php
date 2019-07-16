@@ -23,11 +23,11 @@ use Zend\Session\Container;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
-class CreateJobOrder 
+class CreateJobOrder
 {
     /**
      *
@@ -82,12 +82,11 @@ class CreateJobOrder
         $productWrapper = $user->getAttachedEntity(UserProduct::class);
 
         if ($productWrapper) {
-
             $userProduct = $productWrapper->getProduct();
             $product     = new Product();
 
             $product->setName(str_replace('Gastro24\Entity\Product\\', '', get_class($userProduct)))
-                    ->setQuantity(1);
+                ->setQuantity(1);
 
             $products->add($product);
         }

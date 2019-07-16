@@ -16,13 +16,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Gastro24\Controller\RedirectExternalJobs
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test  
+ * @todo write test
  */
 class RedirectExternalJobsFactory implements FactoryInterface
 {
-    
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $validators = $container->get('ValidatorManager');
@@ -30,6 +29,6 @@ class RedirectExternalJobsFactory implements FactoryInterface
         $templatesMap = $container->get(CompanyTemplatesMap::class);
         $service    = new RedirectExternalJobs($validator, $templatesMap);
         
-        return $service;    
+        return $service;
     }
 }

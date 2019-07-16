@@ -18,21 +18,21 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
  * @author Anthonius Munthi <me@itstoni.com>
- * @todo write test 
+ * @todo write test
  */
 class WordpressContentSnippetFactory implements FactoryInterface
 {
-	
-	/**
-	 * @param ContainerInterface $container
-	 * @param string $requestedName
-	 * @param array|null $options
-	 *
-	 * @return WordpressContentSnippet
-	 */
+    
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     *
+     * @return WordpressContentSnippet
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $client   = $container->get(WordpressClient::class);

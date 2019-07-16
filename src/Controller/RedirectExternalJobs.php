@@ -19,9 +19,9 @@ use Zend\View\Model\ViewModel;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class RedirectExternalJobs extends AbstractActionController
 {
@@ -67,7 +67,6 @@ class RedirectExternalJobs extends AbstractActionController
         $model = new ViewModel(['job' => $job]);
         $jobTemplate = $this->templatesMap->getTemplate($job->getOrganization());
         if (!$job->getLink() || $jobTemplate) {
-
             $appTemplate = $appModel->getTemplate();
             $internModel = $this->forward()->dispatch('Jobs/Template', ['internal' => true, 'id' => $job->getId(), 'action' => 'view']);
             $internModel->setTemplate($jobTemplate ?: 'jobs-frankfurt/jobs/view-intern');
@@ -88,7 +87,6 @@ class RedirectExternalJobs extends AbstractActionController
                 'isVisited' => $isVisited,
                 'isEmbeddable' => $isEmbeddable,
             ]);
-
         }
         $model->setTemplate('jobs-frankfurt/jobs/view-extern');
 

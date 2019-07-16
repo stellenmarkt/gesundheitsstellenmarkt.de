@@ -22,7 +22,6 @@ use Jobs\Listener\Events\JobEvent;
  */
 class IncreaseJobCount
 {
-
     public function __invoke(JobEvent $event)
     {
         /* @var \Auth\Entity\User $owner

@@ -57,7 +57,4 @@ class JobPdfFactory extends FileUploadFactory
      * @var string
      */
     protected $options='JobsFrankfurt/WordpressApiOptions';
-
-
-
 }

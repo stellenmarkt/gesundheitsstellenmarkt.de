@@ -15,9 +15,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class WordpressPageController extends AbstractActionController
 {

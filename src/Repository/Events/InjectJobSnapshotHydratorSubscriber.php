@@ -18,9 +18,9 @@ use Jobs\Entity\JobSnapshot;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class InjectJobSnapshotHydratorSubscriber implements EventSubscriber
 {
@@ -35,7 +35,7 @@ class InjectJobSnapshotHydratorSubscriber implements EventSubscriber
     {
         $repository = $eventArgs->get('repository');
 
-        if ($repository instanceOf SnapshotRepository && JobSnapshot::class == $repository->getDocumentName()) {
+        if ($repository instanceof SnapshotRepository && JobSnapshot::class == $repository->getDocumentName()) {
             $repository->setHydrator(new JobHydrator());
             $snapshot = new \ReflectionClass(JobSnapshot::class);
             $props    = $snapshot->getDefaultProperties();
@@ -45,5 +45,4 @@ class InjectJobSnapshotHydratorSubscriber implements EventSubscriber
             $repository->setSnapshotAttributes($attributes);
         }
     }
-
 }

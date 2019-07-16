@@ -19,9 +19,9 @@ use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobUrlDelegatorFactory implements DelegatorFactoryInterface
 {
@@ -35,6 +35,4 @@ class JobUrlDelegatorFactory implements DelegatorFactoryInterface
 
         return $delegator;
     }
-
-
 }

@@ -16,9 +16,9 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class ContactMailSender extends AbstractPlugin
 {
@@ -62,5 +62,4 @@ class ContactMailSender extends AbstractPlugin
 
         $this->mailer->send($mail);
     }
-
 }

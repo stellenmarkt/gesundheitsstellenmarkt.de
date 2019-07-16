@@ -15,13 +15,12 @@ use Zend\Filter\FilterInterface;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class PageIdMap implements FilterInterface
 {
-
     private $map = [];
 
     public function __construct(array $map = [])

@@ -14,9 +14,9 @@ use Zend\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class SetSubject extends AbstractHelper
 {
@@ -26,7 +26,9 @@ class SetSubject extends AbstractHelper
         $view = $this->getView();
         $mail = $view->get('mail');
 
-        if (!$mail) { return; }
+        if (!$mail) {
+            return;
+        }
 
         $mail->setSubject($subject);
 

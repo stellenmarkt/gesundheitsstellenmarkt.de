@@ -14,9 +14,9 @@ use Organizations\Repository\Filter\ListJobQuery;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class OrganizationJobsListQuery extends ListJobQuery
 {
@@ -27,5 +27,4 @@ class OrganizationJobsListQuery extends ListJobQuery
 
         return $queryBuilder;
     }
-
 }

@@ -15,13 +15,12 @@ use Zend\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class OrgProfileUrl extends AbstractHelper
 {
-
     private $urlHelper;
 
     public function __construct($urlHelper = null)
@@ -31,7 +30,7 @@ class OrgProfileUrl extends AbstractHelper
 
     public function __invoke($orgId, $orgName = null)
     {
-        if ($orgId instanceOf OrganizationInterface) {
+        if ($orgId instanceof OrganizationInterface) {
             $orgName = $orgId->getOrganizationName()->getName();
             $orgId   = $orgId->getId();
         }
@@ -41,7 +40,6 @@ class OrgProfileUrl extends AbstractHelper
         $url       = $urlHelper('lang/organizations-profiles', ['id' => $orgId, 'name' => $orgName], true);
 
         return $url;
-
     }
 
     /**

@@ -15,13 +15,12 @@ use Zend\Form\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class LogoUri extends AbstractHelper
 {
-
     private $imageCache;
 
     public function __construct($imageCache)
@@ -41,7 +40,7 @@ class LogoUri extends AbstractHelper
         }
 
 
-        if ($job instanceOf JobProxy) {
+        if ($job instanceof JobProxy) {
             $logo = $job->getSolrValue('companyLogo');
             if (0 === strpos($logo, 'http')) {
                 return $logo;
@@ -59,5 +58,4 @@ class LogoUri extends AbstractHelper
 
         return '';
     }
-
 }

@@ -14,9 +14,9 @@ use Jobs\Form\PreviewFieldset;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class JobPreviewFieldsetDelegator extends PreviewFieldset
 {
@@ -27,8 +27,8 @@ class JobPreviewFieldsetDelegator extends PreviewFieldset
         $terms = $this->get('termsAccepted');
         $terms->setOption('route', 'lang/wordpress');
         $terms->setOption('params', [
-                'type' => 'page',
-                'id'   => 'agb',
+            'type' => 'page',
+            'id'   => 'agb',
         ]);
     }
 }
