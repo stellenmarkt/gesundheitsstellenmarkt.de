@@ -4,6 +4,20 @@ module.exports = function(grunt) {
   var moduleDir = targetDir + "/modules/JobsFrankfurt";
 
   grunt.config.merge({
+    concat: {
+      stellenmarkt: {
+        files: [
+          {   
+              src: [
+                "./node_modules/jquery-match-height/dist/jquery.matchHeight.js",
+                "./node_modules/cookie-notice/dist/cookie.notice.js",
+                "./public/js/index.js"
+              ],
+              dest:targetDir+"/modules/JobsFrankfurt/dist/stellenmarkt.js"
+          }
+        ]
+      }
+    },
     less: {
       stellenmarkt: {
         options: {

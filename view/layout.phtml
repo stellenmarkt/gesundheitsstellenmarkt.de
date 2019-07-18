@@ -31,13 +31,10 @@ $this->configHeadScript()->prependScript('var lang="' . $lang . '";'
 $this->headLink()->prependStylesheet($this->basePath() . '/modules/JobsFrankfurt/layout.css');
 $this->headLink()->prependStylesheet($this->basePath('dist/css/core.min.css'));
 $this->configHeadScript()->prependFile($this->basepath('dist/js/core.js'));
-$this->configHeadScript()->appendFile($this->basePath('modules/JobsFrankfurt/js/jquery.matchHeight.js'))->appendFile($this->basePath('modules/JobsFrankfurt/js/index.js'));
+$this->configHeadScript()->appendFile($this->basePath('modules/JobsFrankfurt/dist/stellenmarkt.js'));
 
 $langScript = 'dist/locales/' . $lang . '.js';
 $this->configHeadScript()->appendFile($this->basePath($langScript));
-
-$this->headLink()->appendStylesheet($this->basePath('/modules/JobsFrankfurt/jssocials-1.4.0/dist/jssocials.css'));
-$this->headLink()->appendStylesheet($this->basePath('/modules/JobsFrankfurt/jssocials-1.4.0/dist/jssocials-theme-flat.css'));
 
 $this->configHeadScript()->appendScript('var lang="' . $this->params('lang') . '";'
     . 'var basePath="' . $this->basePath() . '";');
@@ -54,104 +51,6 @@ $this->configHeadScript()->appendScript('var lang="' . $this->params('lang') . '
     <?php echo $this->configHeadScript() ?>
     <?php echo $this->headLink() ?>
     <?php echo $this->headStyle() ?>
-    
-    <link type="text/css" href="/modules/JobsFrankfurt/fit.css" rel="stylesheet" media="screen">
-
-    <style>
-     @media (max-width: 768px){
-
-         .navbar-nav {
-    margin: 0;
-    width: 100%;
-}
-        .navbar-nav>li>a:hover {
-            color: #fff;
-           }
-
-           #main-navigation a:hover, #main-navigation .dropdown-menu>li>a:hover {
-             color: #fff!important;
-        }
-
-         #main-navigation ul li a.inverted:hover {
-
-             color: #000!important;
-         }
-
-        .navbar-collapse {
-
-          box-shadow: none!important;
-        }
-
-
-#main-navigation .dropdown-menu>li>a {
-    color: #000!important;
-}
-        .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: 8px 15px 8px 45px!important;
-}
-.nav>li {
-
-    border-bottom: 1px solid #ddd;
-}
-        }
-        #yk-login .nav .active a, #wizardcontainer-jobs-form-categoriescontainer .nav .active a, #wizardcontainer-jobs-form-job .nav .active a {color: #fff;}
-        #jobsbymail-subscribe-form .row {margin-bottom:10px;}
-        iframe {border:0}
-        #form-jobs-form-preview  .panel-body {padding: 0!important;}
-        #main-navigation ul li a.inverted {background-color:#fff;color:#243b84;}
-        #main-navigation ul li a.inverted:hover {color:#fff;}
-            .navbar-toggle {
-             border-color: #242424!important;
-            background-color: #243b84!important;
-            }
-
-            .navbar-toggle .icon-bar {
-                background-color: #ffffff;
-          }
-
-    </style>
-    <script>
-
-
-        (function( $ ) {
-	'use strict';
-
-    /**
-     * FAQs Toggles
-     */
-    $(function() {
-        $('.qe-toggle-title').click(function () {
-            var parent_toggle = $(this).closest('.qe-faq-toggle');
-            if ( parent_toggle.hasClass( 'active' ) ) {
-                $(this).find('i.fa').removeClass( 'fa-minus-circle' ).addClass( 'fa-plus-circle' );
-                parent_toggle.removeClass( 'active' ).find( '.qe-toggle-content' ).slideUp( 'fast' );
-            } else {
-                $(this).find('i.fa').removeClass( 'fa-plus-circle' ).addClass( 'fa-minus-circle' );
-                parent_toggle.addClass( 'active' ).find( '.qe-toggle-content' ).slideDown( 'fast' );
-            }
-        });
-    });
-
-    /**
-     * FAQs Filter
-     */
-    $(function() {
-        $('.qe-faqs-filter').click( function ( event ) {
-            event.preventDefault();
-            $(this).parents('li').addClass('active').siblings().removeClass('active');
-            var filterSelector = $(this).attr( 'data-filter' );
-            var allFAQs = $( '.qe-faq-toggle' );
-            if ( filterSelector == '*' ) {
-                allFAQs.show();
-            } else {
-                allFAQs.not( filterSelector ).hide().end().filter( filterSelector ).show();
-            }
-        });
-    });
-
-})( jQuery );
-    </script>
-
 </head>
 <body>
 <?php if (!$this->noHeader):?>
@@ -194,17 +93,6 @@ $this->configHeadScript()->appendScript('var lang="' . $this->params('lang') . '
         </div>
     </header>
     <?php endif ?>
- <style>
-
-     #content .navbar {
-
-         position:static!important;
-
-     }
-
-
- </style>
-
 <main id="content" style="background-color:#f6f6f6;margin-bottom:0;padding-bottom:50px;min-height:65vh;padding-top:15px;position:relative;">
 <div class="container">
         <?php echo $notifications?>
@@ -213,5 +101,38 @@ $this->configHeadScript()->appendScript('var lang="' . $this->params('lang') . '
 </main>
 
 <?php if (!$this->noFooter): echo $this->partial("footer"); endif; ?>
+<script>
+  new cookieNoticeJS({
+    // Position for the cookie-notifier (default=bottom)
+    'cookieNoticePosition': 'top',
+
+    // Shows the "learn more button (default=false)
+    'learnMoreLinkEnabled': false,
+
+    // The message will be shown again in X days
+    'expiresIn': 30,
+
+    // Dismiss button background color
+    'buttonBgColor': '#d35400',
+
+    // Dismiss button text color
+    'buttonTextColor': '#fff',
+
+    // Notice background color
+    'noticeBgColor': '#000',
+
+    // Notice text color
+    'noticeTextColor': '#fff',
+
+    // the learnMoreLink color (default='#009fdd')
+    'linkColor': '#f00',
+
+    // The target of the learn more link (default='', or '_blank')
+    'linkTarget': '',
+
+    // Print debug output to the console (default=false)
+    'debug': false
+  });
+</script>
 </body>
 </html>
