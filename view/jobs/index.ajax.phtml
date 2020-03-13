@@ -3,7 +3,7 @@
  * YAWIK
  *
  * @filesource
- * @copyright (c) 2013 - 2016 Cross Solution (http://cross-solution.de)
+ * @copyright (c) 2013 - 2020 Cross Solution (http://cross-solution.de)
  * @license   MIT
  */
 if (count($jobs)): // We only want to render something, if there are items.
@@ -33,8 +33,8 @@ $description = $wordpress->call('value', ['content.rendered'], '');
 
     <div class="col-md-3">
         <div style="margin-bottom:15px">
-            <strong class="h2" style="color:#22436c"><?=$this->jobs->getTotalItemCount()?> Treffer für</strong>
-            <h1 style="display:inline;color:#22436c" class="h2">
+            <strong class="h2" style="color:#6bc949"><?=$this->jobs->getTotalItemCount()?> Treffer für</strong>
+            <h1 style="display:inline;color:#6bc949" class="h2">
                 <?=$wordpress->call('value', ['title.rendered'], '') ?: (count($this->jobs) ? 'Ihre Job-Suche' : 'Leider keine passenden Jobs gefunden'); ?>
             </h1>
 
@@ -127,7 +127,7 @@ $description = $wordpress->call('value', ['content.rendered'], '');
     $href = $this->jobUrl($job, ['linkOnly' => true]);
 
     ?>
-    <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="col-12">
         <div class="featured-image-box">
             <div class="img-box">
                 <a href="<?=$href?>" rel="nofollow" target="_blank">
@@ -164,14 +164,16 @@ $description = $wordpress->call('value', ['content.rendered'], '');
                     }
                     ?>
                     </p>
-                    <p>
+                    <p>&nbsp;&nbsp;
+                    <i class="fa fa-map-marker"></i>&nbsp;
                         <?php $typeOfContract = $job->getClassifications()->getEmploymentTypes()->__toString()?:'Vollzeit' ?>
                         <span class="yk-contract yk-<?=$typeOfContract?>"><?=$typeOfContract; ?></span>
                     </p>
                     <p>
                         <?=preg_replace('~\(.*?\)$~', '', (string) $job->getLocation())?>
                     </p>
-                    <p> Publiziert am:
+                    <p> &nbsp;&nbsp;
+                        <i class="fa fa-calendar"></i>&nbsp;
                         <?php
                         if ($job->getDatePublishStart()): echo $this->dateFormat($job->getDatePublishStart(), 'short', 'none');
                         elseif ($job->getDateCreated()): echo $this->dateFormat($job->getDateCreated(), 'short', 'none');

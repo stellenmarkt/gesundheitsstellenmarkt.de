@@ -1,10 +1,11 @@
 @import "../../../modules/Core/less/yawik-core.less";
-@brand-primary: #476c9b;
+@brand-primary: #8466b0;
 @g24-grey: #242424;
 @g24-white: #ffffff;
 @fa-font-path: '/dist/fonts';
 @font-size-base: 14px;
-@font-family-sans-serif: sans-serif;
+@font-family-sans-serif: 'Overpass', sans-serif;
+@font-family-weight: 200;
 @border-radius-base: 0px;
 @headings-font-weight: 600;
 @footer-height: 49px;
@@ -30,7 +31,6 @@
 @font-size-h2: 21px;
 @font-size-h3: 14px;
 @font-size-h4: 16px;
-@font-size-h5: 14px;
 @yk-tab-bg: lightgray;
 @yk-tab-color: @brand-primary;
 @yk-tab-active-bg: @brand-primary;
@@ -45,48 +45,126 @@ body {
 	height: 100%;
 	overflow-x: hidden;
 }
-
+.logo{
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 24px 0 0 0;
+    position: static !important;
+}
+.logotype {
+    float: left;
+    font-size: 40px;
+    padding: 30px 0 10px 15px;
+}
+.menu-logo h1{
+	color: #6bc949;
+    font-size: 31px;
+}
+.menu-logo span{
+    font-weight: 900;
+    color: #8466b0;
+    display: block;
+    letter-spacing: 6px;
+}
+.pagination{
+	margin-top: 15px !important;
+}
+.pagination > li > a{
+	padding: 15px !important;
+	margin-right: 3px;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+	color: @brand-primary;
+	background: #fff;
+	font-weight: bold;
+}
+.yk-icon {
+    color: #8466b0;
+}
+#form-jobsbymail-subscribe-form .yk-icon{
+color: #fff;
+}
+.navbar{
+	margin-bottom: 0px !important;
+}
+.h2{
+	color: #6bc949;
+	font-size: 17px;
+}
+label {
+	font-weight: 300;
+}
 .featured-image-box {
+	display: flex;
+	width: 100%;
 	border: 1px solid #ccc;
 	background-color: #fff;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	position: relative;
+	margin-bottom: 2px;
 	.img-box {
+		width: 160px;
 		min-height: 1px;
-		position: relative;
-		padding-bottom: 30%;
+		padding-top: 2%;
 		vertical-align: top;
+		background-color: #fff;
+		display: block;
+		margin: 10px auto;
+		position: relative;
 	}
 	.content-area {
 		background-color: @g24-white;
 		padding: 20px;
+		width: 100%;
+		p{
+			display: inline-block;
+		}
 	}
 	z-index: 1000;
 }
-
-.img-box {
-	background-color: #fff;
-	display: block;
-	margin: 10px auto;
-	position: relative;
-}
-
 .center-block {
 	max-width: 100%;
-	position: absolute;
 	max-height: 100%;
 	margin: auto;
-	bottom: 0;
-	right: 0;
-	top: 0;
 	padding: 0 10px;
-	left: 0;
+	display: block;
 }
 
 .input-group .form-control {
 	border-radius: 0;
 }
 
+.form-control {
+	display:block;
+	width:100%;
+	height:47px;
+	padding:6px 12px;
+	font-size:16px !important;
+	font-weight: 300;
+	line-height:1.42857143;
+	color:#555;
+	background-color:#fff;
+	background-image:none;
+	border:2px solid #baa4e2;
+	border-radius:0px;
+	-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
+   }
+   .select2-container--bootstrap .select2-selection--single {
+	height:47px !important;
+	line-height:1.42857143;
+	padding:6px 24px 6px 12px
+   }
+   .select2-container--bootstrap .select2-selection {
+	background-color:#fff;
+	border:2px solid #baa4e2;
+	border-radius:0px;
+	color:#555;
+	font-family:sans-serif;
+	font-size:16px;
+	outline:0
+   }
 .apply {
 	bottom: 0;
 	text-align: center;
@@ -95,19 +173,44 @@ body {
 	position: absolute;
 	width: 100%;
 }
-
+.search-form-container .btn-primary {
+    width: 75% !important;
+    z-index: 1;
+    position: relative;
+    font-size: 16px;
+    font-family: inherit;
+    color: white;
+    padding: .7em 1em;
+    outline: none;
+}
+.search-form-container .btn-primary {
+    background-color: #6bc949;
+    border: none;
+}
 .yk-notifications {
 	margin-top: 0px;
 }
-
+.btn {
+    padding: 11px 12px;
+    font-size: 15px;
+}
+.btn-default:hover {
+	color:#333;
+	background-color:#fff;
+   }
 #form-jobsbymail-subscribe-form {
 	button.btn-info {
 		background-color: @btn-danger-bg;
-		border-color: @btn-danger-border;
+		border-color: @btn-danger-bg;
 		color: @btn-danger-color;
+		width: 100%;
+		-webkit-transition: background-color ease-in-out .15s, ease-in-out .15s;
+		-o-transition: background-color ease-in-out .15s, ease-in-out .15s;
+		transition:background-color ease-in-out .15s, ease-in-out .15s
 	}
-	button.btn-info :hover {
-		background-color: darken(@btn-danger-bg, 10%);
+	button.btn-info:hover {
+		background-color: #f78481;
+		border-color: #f78481;
 	}
 }
 
@@ -118,16 +221,23 @@ body {
 	line-height: 24px;
 	color: #b6bed6;
 	nav ul li a {
+		text-decoration: none;
+		color: #fff;
+	}
+	nav ul li a:hover {
 		text-decoration: underline;
 	}
-	a {
-		color: #b6bed6;
-	}
 	h5 {
-		color: #fff;
+		color: #dbc8e9;
+		font-size: 18px;
+		font-weight: 700;
+		text-align: center;
 	}
 	hr {
 		border-top: 1px solid darken(@brand-primary, 20%);
+	}
+	.list-unstyled{
+		text-align: center;
 	}
 }
 
@@ -184,13 +294,11 @@ main {
 		.search-form-container {
 			background-image: linear-gradient(#121212, rgba(0,0,0,0.001));
 			input[type=text] {
-				border-top-left-radius: 5px !important;
-				border-bottom-left-radius: 5px !important;
+				border-top-left-radius: 0px !important;
+				border-bottom-left-radius: 0px !important;
 			}
 			.btn-default {
 				width: 25% !important;
-				border-top-right-radius: 5px !important;
-				border-bottom-right-radius: 5px !important;
 			}
 			.btn-primary {
 				width: 75% !important;
@@ -200,11 +308,44 @@ main {
 			}
 			.searchform {
 				position: relative;
-				margin-top: 100px;
-				margin-bottom: auto;
-				background: rgba(0,0,0,.5);
+				margin-top: 11%;
+				margin-bottom: 1%;
+				background:rgba(123, 185, 195, 0.5);
 				padding: 40px;
+				border-radius: 6px;
 			}
+			.btn-primary {
+				width: 75% !important;
+				z-index: 1;
+				position: relative;
+				font-size: 16px;
+				font-family: inherit;
+				color: white;
+				padding: 0.7em 1em;
+				outline: none;
+			  }
+			  .btn-primary::before {
+				content: '';
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: #8466b0;
+				transform-origin: center top;
+				transform: scaleY(0);
+				transition: transform 0.25s ease-in-out;
+			  }
+			  
+			  .btn-primary:hover {
+				cursor: pointer;
+			  }
+			  
+			  .btn-primary:hover::before {
+				transform-origin: center bottom;
+				transform: scaleY(1);
+			  }
 		}
 
 		#main-navigation {
@@ -227,25 +368,43 @@ main {
 			.dropdown-menu>li>a:hover {
 				background-color: @navbar-inverse-toggle-hover-bg;
 			}
+			.navbar-nav>li {
+				position:relative
+			   }
+			.navbar-nav>li {
+				position:relative
+			   }
+			.navbar-nav>li::before {
+				content:'';
+				position:absolute;
+				left:50%;
+				bottom:0;
+				width:100%;
+				height:2px;
+				background-color:#8466b0;
+				transform-origin:center;
+				transform:translate(-50%, 0) scaleX(0);
+				transition:transform .3s ease-in-out
+			   }
+			.navbar-nav>li:hover::before {
+				transform:translate(-50%, 0) scaleX(1)
+			   }
 		}
 	}
   // Ipad
   @media(max-width: @screen-sm) {
     .search-form-container {
       input[type=text] {
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
         border-bottom-left-radius: 0px !important;
       }
       .btn-default {
         width: 16.66% !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-right-radius: 0px !important;
 
       }
       .btn-primary {
         width: 83.33% !important;
-        border-bottom-left-radius: 15px !important;
       }
     }
   }
@@ -350,8 +509,8 @@ a[data-toggle="collapse"] {
 }
 
 .bg-static {
-	background-image: url(background.jpg);
-	background-color: #999;
+	background-image: url(header.jpg);
+	background-color: #fff;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -361,11 +520,6 @@ a[data-toggle="collapse"] {
 		color: white;
 		font-weight: 600;
 	}
-}
-
-.logo {
-	position: absolute;
-	top: -50px;
 }
 #cookieNotice {
   z-index: 1010 !important;
