@@ -21,14 +21,14 @@
     "require": {
         "yawik/core": "^0.34",
         "yawik/jobs": "^0.34",
-        "yawik/orders": "^0.3",
-        "yawik/jobs-by-mail": "^0.2",
+        "yawik/orders": "^0.4",
+        "yawik/jobs-by-mail": "^0.3",
         "yawik/solr": "^0.9",
         "yawik/organizations": "^0.34",
         "yawik/pdf": "^0.34",
         "yawik/composer-plugin": "^1.0",
         "laminas/laminas-dependency-plugin": "^1.0"
-    },    
+    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.12"
     },
@@ -63,5 +63,11 @@
         "zf": {
             "module": "JobsFrankfurt"
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/cbleek"
+        }
+    ]
 }
