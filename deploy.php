@@ -7,7 +7,7 @@ require 'recipe/zend_framework.php';
 set('application', 'gesundheitsstellenmarkt.de');
 
 // Project repository
-set('repository', 'git@gitlab.cross-solution.de:yawik-modules/gesundheitsstellenmarkt.de.git');
+set('repository', 'git@gitlab.cross-solution.de:HPL/yawik-modules/gesundheitsstellenmarkt.de.git');
 
 // Shared files/dirs between deploys 
 add('shared_files', [
